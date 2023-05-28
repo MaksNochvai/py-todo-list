@@ -1,3 +1,10 @@
 from django.shortcuts import render
+from django.views.generic import ListView
 
-# Create your views here.
+from todo_list.models import Task
+
+
+class TaskListView(ListView):
+    model = Task
+    paginate_by = 5
+

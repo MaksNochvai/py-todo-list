@@ -1,16 +1,10 @@
 from django.urls import path
 
-from blog.views import (
-    PostListView, PostDetailView,
-)
+from todo_list.views import TaskListView
+
 
 urlpatterns = [
-    path("", PostListView.as_view(), name="index"),
-    path(
-        "posts/<int:pk>/",
-        PostDetailView.as_view(),
-        name="post-detail"
-    ),
+    path("", TaskListView.as_view(), name="index"),
 ]
 
 app_name = "blog"
